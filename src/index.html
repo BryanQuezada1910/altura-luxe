@@ -8,12 +8,15 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white">
+<body class="bg-light text-dark dark:bg-dark dark:text-light font-serif">
 
     <!-- Encabezado -->
-    <header class="flex justify-between items-center p-4 bg-dark text-white">
-        <div class="text-2xl font-bold">Techado Premium</div>
-        <nav class="flex space-x-5 items-center">
+    <header class="flex justify-between items-center p-4">
+        <!-- Logo -->
+        <div class="text-2xl font-bold">Techado</div>
+
+        <!-- Menú en pantallas grandes -->
+        <nav class="hidden md:flex space-x-5 items-center">
             <a href="#inicio" class="hover:text-gold">Inicio</a>
             <a href="#servicios" class="hover:text-gold">Servicios</a>
             <a href="#proyectos" class="hover:text-gold">Proyectos</a>
@@ -25,63 +28,114 @@
                 <option value="dark">Oscuro</option>
             </select>
         </nav>
-        <a href="#contacto" class="bg-gold text-dark px-4 py-2 rounded hover:bg-opacity-80">Solicitar Cotización</a>
+
+        <!-- Botón "Solicitar Cotización" -->
+        <a href="#contacto" class="bg-gold text-dark px-4 py-2 rounded hover:bg-opacity-80 md:inline-block">Solicitar
+            Cotización</a>
+
+        <!-- Botón de menú en pantallas pequeñas -->
+        <button id="menu-toggle" class="md:hidden">
+            <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </button>
     </header>
 
+    <!-- Menú desplegable en pantallas pequeñas -->
+    <div id="menu" class="md:hidden fixed inset-0 bg-dark bg-opacity-80 flex justify-center items-center hidden">
+        <nav class="text-center space-y-5">
+            <a href="#inicio" class="text-white hover:text-gold">Inicio</a>
+            <a href="#servicios" class="text-white hover:text-gold">Servicios</a>
+            <a href="#proyectos" class="text-white hover:text-gold">Proyectos</a>
+            <a href="#contacto" class="text-white hover:text-gold">Contacto</a>
+            <select id="themeSwitcher" class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white border px-4 py-2">
+                <option value="system">Automático</option>
+                <option value="light">Claro</option>
+                <option value="dark">Oscuro</option>
+            </select>
+        </nav>
+    </div>
+
     <!-- Hero Section -->
-    <section id="inicio" class="bg-cover bg-center h-screen text-center flex items-center justify-center"
-        style="background-image: url('hero-bg.jpg');">
+    <section id="inicio" class="bg-cover bg-center min-h-[750px] text-center flex items-center justify-center"
+        style="background-image: url('img/casa-techo-tejas.webp');">
         <div>
-            <h1 class="text-5xl text-gold font-bold">Excelencia en Techado</h1>
-            <p class="text-xl my-4">Transformamos hogares con techos de lujo</p>
-            <a href="#contacto" class="bg-gold text-dark px-6 py-3 rounded-lg text-lg hover:bg-opacity-80">Agenda una
-                Consulta</a>
+            <div class="space-y-6">
+                <h1 class="text-5xl text-gold font-bold">Excelencia en Techado</h1>
+                <p class="text-xl text-light my-4">Transformamos hogares con techos de lujo</p>
+            </div>
+            <div class="mt-6">
+                <a href="#contacto" class="bg-gold text-dark px-4 py-2 rounded text-lg hover:bg-opacity-80">Agenda una
+                    Consulta</a>
+            </div>
         </div>
     </section>
 
     <!-- Sección de Servicios -->
-    <section id="servicios" class="py-20 bg-light text-dark">
-        <h2 class="text-3xl font-bold text-center mb-10">Nuestros Servicios</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="p-5 bg-white rounded-lg shadow-lg">
-                <h3 class="text-xl font-bold mb-3">Techado de Tejas</h3>
-                <p>Elegancia y durabilidad para tu hogar.</p>
-            </div>
-            <div class="p-5 bg-white rounded-lg shadow-lg">
-                <h3 class="text-xl font-bold mb-3">Techado de Metal</h3>
-                <p>Resistencia y modernidad.</p>
-            </div>
-            <div class="p-5 bg-white rounded-lg shadow-lg">
-                <h3 class="text-xl font-bold mb-3">Techado Ecológico</h3>
-                <p>Sostenibilidad con estilo.</p>
+    <section id="servicios" class="py-10">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">Nuestros Servicios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="p-5 bg-white dark:bg-black rounded-lg shadow-lg">
+                    <img src="img/casa-techo-tejas.webp" alt="Techo de tejas" class="rounded-lg aspect-square">
+                    <h3 class="text-xl font-bold mb-3">Techado de Tejas</h3>
+                    <p>Elegancia y durabilidad para tu hogar.</p>
+                </div>
+                <div class="p-5 bg-white rounded-lg shadow-lg">
+                    <img src="img/casa-moderna-elegante-techo-metal.webp" alt="Techo de tejas"
+                        class="rounded-lg aspect-square">
+                    <h3 class="text-xl font-bold mb-3">Techado de Metal</h3>
+                    <p>Resistencia y modernidad.</p>
+                </div>
+                <div class="p-5 bg-white rounded-lg shadow-lg">
+                    <img src="img/casa-techo-tejas.webp" alt="Techo de tejas" class="rounded-lg aspect-square">
+                    <h3 class="text-xl font-bold mb-3">Techado Ecológico</h3>
+                    <p>Sostenibilidad con estilo.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Sección de Proyectos -->
-    <section id="proyectos" class="py-20 bg-dark text-light">
-        <h2 class="text-3xl font-bold text-center mb-10">Proyectos Recientes</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div>
-                <img src="project1.jpg" alt="Proyecto 1" class="rounded-lg">
-                <p class="mt-3">Residencia en Vecindario Exclusivo</p>
+    <section id="proyectos" class="py-10">
+        <div>
+            <h2 class="text-3xl font-bold text-center mb-10">Proyectos Recientes</h2>
+            <div class="flex flex-wrap h-96">
+                <div class="w-full md:w-1/2 h-full">
+                    <img src="img/casa-techo-tejas.webp" alt="Proyecto 1" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-1/2 h-full">
+                    <p class="text-center">Residencia en Vecindario Exclusivo</p>
+                </div>
             </div>
-            <div>
-                <img src="project2.jpg" alt="Proyecto 2" class="rounded-lg">
-                <p class="mt-3">Proyecto de lujo en [Ubicación]</p>
+            <div class="flex flex-wrap max-md:flex-row-reverse h-96">
+                <div class="w-full md:w-1/2 h-full">
+                    <p class="text-center">Proyecto de lujo en [Ubicación]</p>
+                </div>
+                <div class="w-full md:w-1/2 h-full">
+                    <img src="img/casa-techo-tejas.webp" alt="Proyecto 2" class="w-full h-full object-cover">
+                </div>
             </div>
-            <div>
-                <img src="project3.jpg" alt="Proyecto 3" class="rounded-lg">
-                <p class="mt-3">Renovación de techo en [Ubicación]</p>
+            <div class="flex flex-wrap h-96">
+                <div class="w-full md:w-1/2 h-full">
+                    <img src="img/casa-techo-tejas.webp" alt="Proyecto 3" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-1/2 h-full">
+                    <p class="text-center">Renovación de techo en [Ubicación]</p>
+                </div>
             </div>
+
         </div>
+
         <div class="text-center mt-10">
-            <a href="#" class="bg-gold text-dark px-6 py-3 rounded-lg text-lg hover:bg-opacity-80">Ver más proyectos</a>
+            <a href="#proyectos" class="bg-gold text-dark px-6 py-3 rounded-lg text-lg hover:bg-opacity-80">Ver más
+                proyectos</a>
         </div>
     </section>
 
     <!-- Sección de Contacto -->
-    <section id="contacto" class="py-20 bg-light text-dark">
+    <section id="contacto" class="py-10">
         <h2 class="text-3xl font-bold text-center mb-10">Contáctanos</h2>
         <form class="max-w-lg mx-auto space-y-5">
             <input type="text" placeholder="Nombre" class="w-full px-4 py-2 border rounded-lg">
@@ -92,48 +146,8 @@
                 class="w-full bg-gold text-dark px-6 py-3 rounded-lg text-lg hover:bg-opacity-80">Enviar</button>
         </form>
     </section>
-    <script>
-        // Detectar tema inicial del sistema
-        const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const themeSwitcher = document.getElementById('themeSwitcher');
 
-        // Función para aplicar el tema
-        function applyTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            } else if (theme === 'light') {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
-                // Detectar automáticamente
-                if (systemPrefersDark) {
-                    document.documentElement.classList.add('dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                }
-                localStorage.setItem('theme', 'system');
-            }
-        }
-
-        // Detectar tema almacenado en localStorage o usar sistema
-        const savedTheme = localStorage.getItem('theme') || 'system';
-        themeSwitcher.value = savedTheme;
-        applyTheme(savedTheme);
-
-        // Cambiar tema cuando se seleccione una opción
-        themeSwitcher.addEventListener('change', (e) => {
-            applyTheme(e.target.value);
-        });
-
-        // Escuchar cambios en la preferencia del sistema
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (localStorage.getItem('theme') === 'system') {
-                applyTheme('system');
-            }
-        });
-    </script>
-
+    <script src="js/index.js"></script>
 </body>
 
 </html>
